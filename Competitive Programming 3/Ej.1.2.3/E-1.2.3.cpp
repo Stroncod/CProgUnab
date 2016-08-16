@@ -84,7 +84,42 @@ void problema9 (){
 	long x = std::strtoul(input.c_str(),nullptr,10);
 	long y = std::strtoul(input.c_str(),nullptr,2);
 	std::cout<< x << ' ' << y << std::endl;
-} 	
+}
+void problema7 (){
+
+	char comb[]  = {'A','A','A','A','A','A','A','A','A','A'};
+	int ult = 9;
+	int final= 9;
+	int ban=0;
+	while(true) {
+	    for (int i = 0; i < 10; ++i)
+	    {
+	    	std::cout << comb[i] << ' '; 
+	    } std::cout << '\n';
+	    comb[ult]++;
+
+	    if(comb[ult]=='K') {
+	    	comb[ult]='A';
+	    	while(true) {
+	    	    final--;
+	    	    comb[final]++;
+	    	    if(comb[final]=='K'){
+	    	    	if(comb[0]=='K') {
+	    	    		ban=1;
+	    	    	}
+	    	    	comb[final]='A';
+
+	    	    }else{
+	    	    	final=ult;
+	    	    	break;
+	    	    }
+	    	}
+	    	if(ban) break;
+	    }
+	    
+	    
+	}
+}
 
 int main(int argc, char const *argv[])
 {
